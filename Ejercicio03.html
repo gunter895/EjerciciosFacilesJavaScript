@@ -1,0 +1,55 @@
+<!--Crea una función que admita como parámetros un número, o un booleano o un string.
+Si a la función se le pasa un número devolverá ese número duplicado
+Si a la función se le pasa un string, devolverá la primera letra del string (en javascript los string son arrays)
+Si a la función se le pasa un booleano, devolverá YES or NOT
+Pista: usa typeof
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       function duplicado(a){
+           return a*2
+       }
+       function primeraLetra(palabra){
+           let aux = []
+           for(let i = 0; i < palabra.lenght; i++){
+               if(i != 0 && palabra[i] == " "){
+                   aux.push(palabra.slice(0,i))
+                   palabra = palabra.slice(i + 1)
+                   i = 0
+               }
+            }
+               aux.push(palabra)
+
+               for(let i = 0; i < aux.length; i++){
+                   aux[i] = String.fromCharCode(aux[i][0]) + aux[i].slice(1)
+               }
+
+               let result = ""
+               for(let i = 0; i < aux.length; i++){
+                   if(i != aux.length - 1){
+                       result += aux[i] + " "
+                   }else{
+                       result += aux[i]
+                   }
+                   
+               }
+               return result     
+           }
+        
+    console.log(typeof(duplicado(2)))   
+    console.log(typeof(primeraLetra("hola")))
+       
+       
+
+    </script>
+</body>
+</html>

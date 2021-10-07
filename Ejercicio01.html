@@ -1,0 +1,29 @@
+<!--Crea una clase (usa el método antiguo) llamada producto Que tenga: 2 atributos (precio y nombre) un método que 
+determine si el valor del producto es negativo un constructor, donde se puede crear el producto con un precio y un nombre-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function Producto(precio,nombre) {
+            this.precio = precio
+            this.nombre = nombre
+
+        this.esNegativo = function () {
+            return this.precio < 0
+  }
+}
+        let pro1 = new Producto(1.5,'Manzana')
+        console.log(pro1.nombre)
+        console.log(pro1.esNegativo())
+
+    </script>
+    
+</body>
+</html>
